@@ -37,7 +37,6 @@ unity-hub install --version 2020.1.4f1 --changeset fa717bb873ec --module android
 [MIT license](https://github.com/game-ci/docker/blob/main/LICENSE)
 
 cd /Volumes/data1/game-ci
-SNAPSHOT_IMG=devops-unity_hub
 docker image build . -f hub/Dockerfile #--no-cache
 
 SNAPSHOT_IMG=unityci_hub

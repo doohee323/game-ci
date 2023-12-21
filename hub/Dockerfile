@@ -1,4 +1,4 @@
-ARG baseImage="unityci/base"
+ARG baseImage="docker.mirrorcity.io/unityci_base:t1"
 FROM $baseImage
 
 # Hub dependencies
