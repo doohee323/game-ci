@@ -9,3 +9,19 @@ Not indended for external use per se.
 ## License
 
 [MIT license](https://github.com/Unity-CI/docker/blob/main/LICENSE)
+
+cd /Volumes/unity/game-ci
+SNAPSHOT_IMG=devops-unity_base
+docker image build . -f base/Dockerfile --no-cache
+
+SNAPSHOT_IMG=linux-arm-v7
+docker buildx build --platform linux/arm/v7 -t ${SNAPSHOT_IMG} -f base/Dockerfile .
+
+TAG=t1
+DOCKER_ID=docker.mirrorcity.io
+docker login ${DOCKER_ID}
+docker tag ${SNAPSHOT_IMG}:latest ${DOCKER_ID}/${SNAPSHOT_IMG}:${TAG}
+docker push ${DOCKER_ID}/${SNAPSHOT_IMG}:${TAG}
+
+
+
