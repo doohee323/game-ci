@@ -28,3 +28,10 @@ unity-editor help
 
 [MIT license](https://github.com/game-ci/docker/blob/main/LICENSE)
 
+cd /Volumes/data1/game-ci
+SNAPSHOT_IMG=devops-unity_base
+docker image build . -f editor/Dockerfile #--no-cache
+
+SNAPSHOT_IMG=unityci_hub
+docker buildx build --platform linux/arm/v7 -t ${SNAPSHOT_IMG} -f base/Dockerfile .
+

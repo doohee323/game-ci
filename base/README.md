@@ -10,7 +10,7 @@ Not indended for external use per se.
 
 [MIT license](https://github.com/Unity-CI/docker/blob/main/LICENSE)
 
-cd /Volumes/unity/game-ci
+cd /Volumes/data1/game-ci
 SNAPSHOT_IMG=devops-unity_base
 docker image build . -f base/Dockerfile #--no-cache
 

@@ -1,5 +1,5 @@
 ARG hubImage="unityci/hub"
-ARG baseImage="docker.mirrorcity.io/unityci_base"
+ARG baseImage="docker.mirrorcity.io/unityci_base:t1"
 
 ###########################
 #         Builder         #
