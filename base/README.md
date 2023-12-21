@@ -12,9 +12,9 @@ Not indended for external use per se.
 
 cd /Volumes/unity/game-ci
 SNAPSHOT_IMG=devops-unity_base
-docker image build . -f base/Dockerfile --no-cache
+docker image build . -f base/Dockerfile #--no-cache
 
-SNAPSHOT_IMG=linux-arm-v7
+SNAPSHOT_IMG=unityci_base
 docker buildx build --platform linux/arm/v7 -t ${SNAPSHOT_IMG} -f base/Dockerfile .
 
 TAG=t1
