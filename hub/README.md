@@ -35,3 +35,17 @@ unity-hub install --version 2020.1.4f1 --changeset fa717bb873ec --module android
 ## License
 
 [MIT license](https://github.com/game-ci/docker/blob/main/LICENSE)
+
+cd /Volumes/data1/game-ci
+SNAPSHOT_IMG=devops-unity_hub
+docker image build . -f hub/Dockerfile #--no-cache
+
+SNAPSHOT_IMG=unityci_hub
+docker buildx build --platform linux/arm/v7 -t ${SNAPSHOT_IMG} -f hub/Dockerfile .
+
+TAG=t1
+DOCKER_ID=docker.mirrorcity.io
+docker login ${DOCKER_ID}
+docker tag ${SNAPSHOT_IMG}:latest ${DOCKER_ID}/${SNAPSHOT_IMG}:${TAG}
+docker push ${DOCKER_ID}/${SNAPSHOT_IMG}:${TAG}
+
